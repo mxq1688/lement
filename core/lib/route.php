@@ -6,7 +6,7 @@
  * Time: 14:02
  */
     namespace core\lib;
-
+    //路由类
     class route{
         public $ctrl;
         public $action;
