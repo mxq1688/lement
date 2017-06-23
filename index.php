@@ -6,7 +6,8 @@
 */
     // 检测PHP环境
     if(version_compare(PHP_VERSION,'5.6.0','<'))  die('require PHP > 5.6.0 !');
-    define('IMENT', realpath('./'));
+//    define('IMENT', realpath('./'));
+    define('IMENT', dirname(__FILE__));
     define('CORE', IMENT. '/core');
     define('APP', IMENT. '/app');
 //    define('MODULE', 'app');

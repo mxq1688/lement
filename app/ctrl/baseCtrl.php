@@ -6,9 +6,10 @@
  * Time: 21:17
  */
     namespace app\ctrl;
-    use core\lib\Controller;
 
-    class baseCtrl extends Controller {
+    use core\lib\controller\Controller;
+
+    class baseCtrl extends Controller  {
         public function __construct()
         {
             parent:: __construct();

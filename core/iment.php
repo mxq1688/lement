@@ -12,20 +12,23 @@
         {
 
         }
-
         static public function run(){
             $route = new \core\lib\route();
             $model = $route->model;
             $ctrl = $route-> ctrl;
             $action = $route-> action;
-            C('MODULE',$model);
+            define('MODULE', $model);//定义模块名
+            define('CONTRO', $ctrl);//定义控制器
+            define('ACTION', $action);//定义方法
+
             $ctrlfile = IMENT. '/'. $model. '/ctrl/'. $ctrl. 'ctrl.php';
             $ctrlClass = '\\'. $model. '\\ctrl\\'. $ctrl. 'Ctrl';
-            $funcfile = IMENT. "/". $model. '/common/function.php';
-            $config = CORE . '/config/config.php';
-            $configfile = IMENT. "/". $model. '/config/config.php';
+            //加载个人函数库和配置文件  框架默认配置
+            $funcfile = IMENT. "/". $model. '/common/function.php';//个人函数库
+            $config = CORE . '/config/config.php';//框架默认配置
+            $configfile = IMENT. "/". $model. '/config/config.php';//个人配置
             if(is_file($config)){
-                C(load_config($config));
+                C(load_config($config));//加入配置参数
             }
             if(is_file($funcfile)){
                 include_once $funcfile;

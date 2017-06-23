@@ -78,7 +78,7 @@
     }
     //实例化模型层
     function D($model){
-        $model = '\\'. C('MODULE') . '\\model\\' .$model.'model';
+        $model = '\\'. MODULE . '\\model\\' .$model.'Model';
         return new $model();
     }
 

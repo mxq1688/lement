@@ -6,9 +6,10 @@
  * Time: 22:17
  */
     namespace app\model;
-    use core\lib\Model;
 
-    class baseModel extends Model  {
+    use core\lib\model\Model;
+
+    class baseModel extends Model   {
         public function __construct()
         {
             parent::__construct();

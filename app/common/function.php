@@ -5,3 +5,7 @@
  * Date: 2017/6/22
  * Time: 22:47
  */
+
+function p(){
+    echo 123;
+}

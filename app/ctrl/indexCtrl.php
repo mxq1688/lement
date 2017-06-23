@@ -16,8 +16,9 @@
             echo 'ok';
 //            $user = M()->query('select * from user_info');
             $user = D('index')->getuser();
-            dump($user);
-            $this->assign();
+//            dump($user);
+            $data = 'fesr';
+            $this->assign('data', $data);
             $this->display();
 
         }
