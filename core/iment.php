@@ -15,10 +15,29 @@
 
         static public function run(){
             $route = new \core\lib\route();
+            $model = $route->model;
             $ctrl = $route-> ctrl;
             $action = $route-> action;
-            $ctrlfile = APP. '/ctrl/'. $ctrl. 'ctrl.php';
-            $ctrlClass = '\\'. MODULE. '\\ctrl\\'. $ctrl. 'Ctrl';
+            C('MODULE',$model);
+            $ctrlfile = IMENT. '/'. $model. '/ctrl/'. $ctrl. 'ctrl.php';
+            $ctrlClass = '\\'. $model. '\\ctrl\\'. $ctrl. 'Ctrl';
+            $funcfile = IMENT. "/". $model. '/common/function.php';
+            $config = CORE . '/config/config.php';
+            $configfile = IMENT. "/". $model. '/config/config.php';
+            if(is_file($config)){
+                C(load_config($config));
+            }
+            if(is_file($funcfile)){
+                include_once $funcfile;
+            }
+            if(is_file($configfile)){
+                C(load_config($configfile));
+            }
+//            if(is_file($configfile)){
+//                $configP = include_once $configfile;
+//                $config = $configP + $config;
+//            }
+
             //下面的这个不需要include 可以使用自动加载  只要这句就行$ctrl = new $ctrlClass()，不明白为什么像下面要这么写
             if(is_file($ctrlfile)){
                 $controller = new $ctrlClass();
@@ -27,6 +46,7 @@
                 //抛出异常
                 throw new \Exception('找不到控制器'. $ctrl. 'Ctrl');
             }
+
             //var_dump($route);
         }
         //自动加载

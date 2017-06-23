@@ -9,7 +9,7 @@
     define('IMENT', realpath('./'));
     define('CORE', IMENT. '/core');
     define('APP', IMENT. '/app');
-    define('MODULE', 'app');
+//    define('MODULE', 'app');
     define('DEBUG', true);
     //debug 调试模式
     if(DEBUG){

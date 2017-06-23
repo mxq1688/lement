@@ -17,5 +17,8 @@
 //            $user = M()->query('select * from user_info');
             $user = D('index')->getuser();
             dump($user);
+            $this->assign();
+            $this->display();
+
         }
     }

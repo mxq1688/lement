@@ -10,16 +10,12 @@
     class Model extends \PDO {
         //使用配置文件中的  数据库配置
 
-        public $dsn = 'mysql:host=localhost;dbname=wellsigncn';
-        public $username = 'root';
-        public $passwd = 'root';
-        public $options = '';
         public function __construct()
         {
-            $dsn = $this->dsn;
-            $username = $this->username;
-            $passwd = $this->passwd;
-            $options = $this-> options;
+            $dsn = C('DB_TYPE') .':host='. C('DB_HOST') .';dbname='. C('DB_NAME');
+            $username = C('DB_USER');
+            $passwd = C('DB_PWD');
+            echo $passwd;
             try{
                 parent::__construct($dsn, $username, $passwd);
             }catch (\PDOException $e){
