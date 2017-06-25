@@ -71,6 +71,27 @@
                 }
         }
     }
+
+    function CC($name=null, $value=null){
+        $conf = new \core\lib\conf();
+        if($name == null){
+            $conf->setConfig();
+            return \core\lib\conf::$config;
+        }
+
+        $name = strtoupper($name);
+        if(is_string($name)){
+            if($value == null)
+                return $conf->getConfig($name);
+            else
+                \core\lib\conf::$config[$name] = $value;
+        }
+        if(is_array($name)){
+            \core\lib\conf::$config = array_merge(\core\lib\conf::$config, array_change_key_case($name,CASE_UPPER));
+        }
+    }
+
+
     //实例化数据库
     function M(){
         $model = new \core\lib\Model();
@@ -166,4 +187,8 @@ function M1($name='', $tablePrefix='',$connection='') {
     if (!isset($_model[$guid]))
         $_model[$guid] = new $class($name,$tablePrefix,$connection);
     return $_model[$guid];
+}
+//写入日志
+function addLog($content=null,$path=null){
+    return \core\lib\log::log($content,$path);
 }

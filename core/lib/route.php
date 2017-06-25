@@ -12,7 +12,9 @@
         public $ctrl;
         public $action;
         function __construct()
-        {   //隐藏index.php  .htaccess文件
+        {
+
+            //隐藏index.php  .htaccess文件
             if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] != '/'){
                 $path = $_SERVER['PATH_INFO'];
                 $path_arr = explode('/', trim($path, '/'));
@@ -24,13 +26,13 @@
                     $this->ctrl = $path_arr[1];
                     unset($path_arr[1]);
                 }else{
-                    $this->ctrl = 'index';
+                    $this->ctrl = C('CONTRO');
                 }
                 if(isset($path_arr[2])){
                     $this->action = $path_arr[2];
                     unset($path_arr[2]);
                 }else{
-                    $this->action = 'index';
+                    $this->action = C('ACTION');
                 }
                 for($i=3; $i< count($path_arr) + 2; $i = $i +2 ){
                     if(isset($path_arr[$i+1])){
@@ -40,9 +42,9 @@
                     }
                 }
         }else{
-                $this->model = 'app';
-                $this->ctrl = 'index';
-                $this->action = 'index';
+                $this->model = C('MODULE');
+                $this->ctrl = C('CONTRO');
+                $this->action = C('ACTION');
             }
         }
     }
