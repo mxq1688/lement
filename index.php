@@ -26,7 +26,9 @@
     //引入自动加载  用于第三方类的加载
     $ven = VENDOR. '/autoload.php';
     if(is_file($ven)){
+        echo '引入文件';
         require  $ven;
+
     }
     //自动加载
     spl_autoload_register("\core\iment::load");
