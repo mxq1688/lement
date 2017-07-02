@@ -10,6 +10,7 @@
     define('IMENT', dirname(__FILE__));
     define('CORE', IMENT. '/core');
     define('APP', IMENT. '/app');
+    define('VENDOR', IMENT. '/vendor');
 //    define('MODULE', 'app');
     define('DEBUG', true);
     //debug 调试模式
@@ -22,6 +23,11 @@
     include_once CORE. "/common/function.php";
     include_once CORE. "/iment.php";
 
+    //引入自动加载  用于第三方类的加载
+    $ven = VENDOR. '/autoload.php';
+    if(is_file($ven)){
+        require  $ven;
+    }
     //自动加载
     spl_autoload_register("\core\iment::load");
 
