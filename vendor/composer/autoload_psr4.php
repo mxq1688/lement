@@ -9,6 +9,10 @@ return array(
     'vendor\\' => array($vendorDir),
     'core\\' => array($baseDir . '/core'),
     'app\\' => array($baseDir . '/app'),
+    'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
 );

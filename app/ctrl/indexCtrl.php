@@ -20,7 +20,7 @@
 //            $user = D('index')->getuser();
 //            dump($user);
 //            echo addLog('sze');
-//            dump(M()->select("user_info","*"));
+            dump(M()->select("user_info","*"));
             $data = 'fesr';
             $this->assign('data', $data);
             $this->display();

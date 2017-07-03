@@ -111,7 +111,7 @@
  * @param boolean $strict 是否严谨 默认为true
  * @return void|string
  */
-function dump($var, $echo=true, $label=null, $strict=true) {
+function dumpt($var, $echo=true, $label=null, $strict=true) {
     $label = ($label === null) ? '' : rtrim($label) . ' ';
     if (!$strict) {
         if (ini_get('html_errors')) {
