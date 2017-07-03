@@ -10,7 +10,8 @@
     "filp/whoops": "*",
 	"catfan/medoo": "*",
     "twig/twig": "*",
-    "symfony/var-dumper": "*"
+    "symfony/var-dumper": "*",
+        "smarty/smarty": "^3.1"
     },
     "autoload": {
         "psr-4": {

@@ -11,7 +11,11 @@
     define('CORE', IMENT. '/core');
     define('APP', IMENT. '/app');
     define('VENDOR', IMENT. '/vendor');
-//    define('MODULE', 'app');
+
+    //入口文件目录绝对路径
+    define('SITE_ROOT', IMENT);
+    //数据缓存目录绝对目录
+    defined('DATA_PATH') or define('DATA_PATH', SITE_ROOT . '/data');
 
 //引入自动加载  用于第三方类的加载
     include  "vendor/autoload.php";
@@ -19,9 +23,11 @@
     define('DEBUG', true);
     //debug 调试模式
     if(DEBUG){
-        $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-        $whoops->register();
+//        $whoops = new \Whoops\Run;
+//        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+//        $whoops->register();
+        //smarty调试
+        define('APP_DEBUG', true);
         ini_set('display_errors', 'On');
     }else{
         ini_set('display_errors', 'Off');
