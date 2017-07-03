@@ -94,7 +94,7 @@
 
     //实例化数据库
     function M(){
-        $model = new \core\lib\Model();
+        $model = new \core\lib\model\Model();
         return $model;
     }
     //实例化模型层

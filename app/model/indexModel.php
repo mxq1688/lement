@@ -13,9 +13,6 @@
         }
 
         public function getuser(){
-            $sql = 'select * from user_info';
-            $query = $this->query($sql);
-            $user = $query->fetchAll();
-            return $user;
+            return $this->select('user_info','*');
         }
     }

@@ -12,9 +12,16 @@
     define('APP', IMENT. '/app');
     define('VENDOR', IMENT. '/vendor');
 //    define('MODULE', 'app');
+
+//引入自动加载  用于第三方类的加载
+    include  "vendor/autoload.php";
+
     define('DEBUG', true);
     //debug 调试模式
     if(DEBUG){
+//        $whoops = new \Whoops\Run;
+//        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+//        $whoops->register();
         ini_set('display_errors', 'On');
     }else{
         ini_set('display_errors', 'Off');
@@ -23,15 +30,9 @@
     include_once CORE. "/common/function.php";
     include_once CORE. "/iment.php";
 
-    //引入自动加载  用于第三方类的加载
-    $ven = VENDOR. '/autoload.php';
-    if(is_file($ven)){
-        echo '引入文件';
-        require  $ven;
 
-    }
-    //自动加载
-    spl_autoload_register("\core\iment::load");
+    //自动加载  可以使用composer 中的autoload.php实现自动加载
+//    spl_autoload_register("\core\iment::load");
 
     //启动框架
     \core\iment::run();
