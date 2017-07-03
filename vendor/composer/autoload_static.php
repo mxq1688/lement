@@ -19,6 +19,10 @@ class ComposerStaticInitab6c692a5604021a06687592c31fbfef
         array (
             'app\\' => 4,
         ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'M' => 
         array (
             'Medoo\\' => 6,
@@ -38,9 +42,23 @@ class ComposerStaticInitab6c692a5604021a06687592c31fbfef
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
         ),
     );
 
@@ -49,6 +67,7 @@ class ComposerStaticInitab6c692a5604021a06687592c31fbfef
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitab6c692a5604021a06687592c31fbfef::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitab6c692a5604021a06687592c31fbfef::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitab6c692a5604021a06687592c31fbfef::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

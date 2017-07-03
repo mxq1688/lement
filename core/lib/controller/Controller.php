@@ -19,7 +19,7 @@
         }
         public function display($html=null){
             extract($this->assign);
-            $file = IMENT. '/'. MODULE. '/view/'. CONTRO;
+            $file = IMENT. '/'. MODULE. '/views/'. CONTRO;
             if(empty($html)){
                 $file = $file. '/'. CONTRO . '.html';
             }else{

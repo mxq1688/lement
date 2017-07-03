@@ -9,5 +9,6 @@ return array(
     'vendor\\' => array($vendorDir),
     'core\\' => array($baseDir . '/core'),
     'app\\' => array($baseDir . '/app'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
 );
