@@ -14,8 +14,8 @@
         {
             //smarty实例化
             $this->tpl = new \Smarty;
-            $this->tpl->left_delimiter = "{#";
-            $this->tpl->right_delimiter = "#}";
+            $this->tpl->left_delimiter = "{";
+            $this->tpl->right_delimiter = "}";
             $this->tpl->setTemplateDir(SITE_ROOT .'/'. MODULE.  '/views/'); //设置模板目录
             $this->tpl->setCompileDir(SITE_ROOT .'/'. MODULE. '/data/cache/templates_c/');
             $this->tpl->setConfigDir(SITE_ROOT . '/views/smarty_configs/');
