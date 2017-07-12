@@ -24,7 +24,7 @@
             $data = 'fesr';
             $this->assign('data', $data);
             $this->display('index');
-
+            dumpt('fhsode');
         }
         public function user(){
             $data = 'user';

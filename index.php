@@ -17,7 +17,7 @@
     //数据缓存目录绝对目录
     defined('DATA_PATH') or define('DATA_PATH', SITE_ROOT . '/data');
 
-//引入自动加载  用于第三方类的加载
+//引入自动加载  用于第三方类的加载     也可以加载框架的类   命名空间命名规则一定要对
     include  "vendor/autoload.php";
 
     define('DEBUG', true);
@@ -33,7 +33,7 @@
         ini_set('display_errors', 'Off');
     }
     //引入公共函数库
-    include_once CORE. "/common/function.php";
+//    include_once CORE. "/common/function.php";
     include_once CORE. "/iment.php";
 
 
